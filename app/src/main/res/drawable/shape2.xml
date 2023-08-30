@@ -7,4 +7,4 @@
         android:angle="@integer/material_motion_duration_medium_1"
         android:endColor="@color/shapeColor3"/>
 
-</selector>
+</shape>
