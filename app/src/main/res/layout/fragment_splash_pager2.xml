@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="@dimen/_400sdp"
     tools:context=".ui.fragments.splash_screens.SplashPager2Fragment"
     android:background="@drawable/background_shape"
     >

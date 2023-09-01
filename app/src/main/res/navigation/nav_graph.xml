@@ -10,9 +10,12 @@
         android:name="com.example.routinerhabittracker.ui.fragments.splash_screens.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
+<!--        <action-->
+<!--            android:id="@+id/action_splashFragment_to_splashPager1Fragment"-->
+<!--            app:destination="@id/splashPager1Fragment" />-->
         <action
-            android:id="@+id/action_splashFragment_to_splashPager1Fragment"
-            app:destination="@id/splashPager1Fragment" />
+            android:id="@+id/action_splashFragment_to_viewPagerSplashFragment"
+            app:destination="@id/viewPagerSplashFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashPager1Fragment"
@@ -37,4 +40,9 @@
         android:name="com.example.routinerhabittracker.ui.fragments.splash_screens.SplashPager3Fragment"
         android:label="fragment_splash_pager3"
         tools:layout="@layout/fragment_splash_pager3" />
+    <fragment
+        android:id="@+id/viewPagerSplashFragment"
+        android:name="com.example.routinerhabittracker.ui.fragments.splash_screens.ViewPagerSplashFragment"
+        android:label="fragment_view_pager_splash"
+        tools:layout="@layout/fragment_view_pager_splash" />
 </navigation>
