@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.SplashPager1Fragment"
+    tools:context=".ui.fragments.splash_screens.SplashPager1Fragment"
     android:background="@drawable/background_shape"
     >
 
@@ -61,18 +62,55 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
+        android:id="@+id/emailBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/email_button"
-        android:text="Continue With E-mail"
         android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="@dimen/_20sdp"
-        android:textColor="@color/black"
+        android:background="@drawable/email_button"
         android:backgroundTint="@color/babyGrey"
+        android:text="Continue With E-mail"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/googleBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/email_button"
+        android:backgroundTint="@color/babyGrey"
+        android:text="Google"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailBtn" />
+
+    <Button
+        android:id="@+id/facebookBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/email_button"
+        android:backgroundTint="@color/babyGrey"
+        android:text="Facebook"
+        app:layout_constraintStart_toEndOf="@+id/googleBtn"
+        app:layout_constraintTop_toBottomOf="@+id/emailBtn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="By Continuing you agree terms of services and privacy policy"
+        android:textColor="@color/babyGrey"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/googleBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

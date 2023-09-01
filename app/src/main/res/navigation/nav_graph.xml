@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.routinerhabittracker.ui.fragments.SplashFragment"
+        android:name="com.example.routinerhabittracker.ui.fragments.splash_screens.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashPager1Fragment"
-        android:name="com.example.routinerhabittracker.ui.fragments.SplashPager1Fragment"
+        android:name="com.example.routinerhabittracker.ui.fragments.splash_screens.SplashPager1Fragment"
         android:label="fragment_splash_pager1"
         tools:layout="@layout/fragment_splash_pager1" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashPager2Fragment"
-        android:name="com.example.routinerhabittracker.ui.fragments.SplashPager2Fragment"
+        android:name="com.example.routinerhabittracker.ui.fragments.splash_screens.SplashPager2Fragment"
         android:label="fragment_splash_pager2"
         tools:layout="@layout/fragment_splash_pager2" >
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashPager3Fragment"
-        android:name="com.example.routinerhabittracker.ui.fragments.SplashPager3Fragment"
+        android:name="com.example.routinerhabittracker.ui.fragments.splash_screens.SplashPager3Fragment"
         android:label="fragment_splash_pager3"
         tools:layout="@layout/fragment_splash_pager3" />
 </navigation>

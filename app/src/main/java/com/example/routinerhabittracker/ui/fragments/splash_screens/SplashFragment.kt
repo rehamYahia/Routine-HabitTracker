@@ -1,4 +1,4 @@
-package com.example.routinerhabittracker.ui.fragments
+package com.example.routinerhabittracker.ui.fragments.splash_screens
 
 import android.os.Bundle
 import android.os.Handler
@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import com.example.routinerhabittracker.R
 import com.example.routinerhabittracker.databinding.FragmentSplashBinding
+import com.example.routinerhabittracker.ui.fragments.SplashFragmentDirections
 
 class SplashFragment : Fragment() {
     private  var _binding: FragmentSplashBinding?=null
@@ -33,7 +33,8 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Handler().postDelayed({
-                              val action = SplashFragmentDirections.actionSplashFragmentToSplashPager1Fragment()
+                              val action =
+                                  SplashFragmentDirections.actionSplashFragmentToSplashPager1Fragment()
             navControler.navigate(action)
         } , 9000)
     }
