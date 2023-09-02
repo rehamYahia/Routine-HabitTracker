@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.splash_screens.ViewPagerSplashFragment"
     android:background="@drawable/background_shape"
-    >
+    tools:ignore="MissingClass">
+
 
 
     <androidx.viewpager2.widget.ViewPager2
@@ -17,6 +18,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <me.relex.circleindicator.CircleIndicator-->
+<!--            android:id="@+id/indicator"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="48dp"-->
+<!--            tools:ignore="MissingConstraints"/>-->
+
+
 
     <Button
         android:id="@+id/emailBtn"

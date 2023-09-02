@@ -42,6 +42,7 @@ class ViewPagerSplashFragment : Fragment() {
             lifecycle
         )
         binding.splashViewPager.adapter = adapter
+        binding.indicator.setViewPager(binding.splashViewPager)
         return view
     }
 
