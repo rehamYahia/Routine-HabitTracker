@@ -10,39 +10,49 @@
         android:name="com.example.routinerhabittracker.ui.fragments.splash_screens.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
-<!--        <action-->
-<!--            android:id="@+id/action_splashFragment_to_splashPager1Fragment"-->
-<!--            app:destination="@id/splashPager1Fragment" />-->
         <action
             android:id="@+id/action_splashFragment_to_viewPagerSplashFragment"
             app:destination="@id/viewPagerSplashFragment" />
     </fragment>
     <fragment
-        android:id="@+id/splashPager1Fragment"
-        android:name="com.example.routinerhabittracker.ui.fragments.splash_screens.SplashPager1Fragment"
-        android:label="fragment_splash_pager1"
-        tools:layout="@layout/fragment_splash_pager1" >
-        <action
-            android:id="@+id/action_splashPager1Fragment_to_splashPager2Fragment"
-            app:destination="@id/splashPager2Fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/splashPager2Fragment"
-        android:name="com.example.routinerhabittracker.ui.fragments.splash_screens.SplashPager2Fragment"
-        android:label="fragment_splash_pager2"
-        tools:layout="@layout/fragment_splash_pager2" >
-        <action
-            android:id="@+id/action_splashPager2Fragment_to_splashPager3Fragment"
-            app:destination="@id/splashPager3Fragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/splashPager3Fragment"
-        android:name="com.example.routinerhabittracker.ui.fragments.splash_screens.SplashPager3Fragment"
-        android:label="fragment_splash_pager3"
-        tools:layout="@layout/fragment_splash_pager3" />
-    <fragment
         android:id="@+id/viewPagerSplashFragment"
         android:name="com.example.routinerhabittracker.ui.fragments.splash_screens.ViewPagerSplashFragment"
         android:label="fragment_view_pager_splash"
-        tools:layout="@layout/fragment_view_pager_splash" />
+        tools:layout="@layout/fragment_view_pager_splash" >
+        <action
+                android:id="@+id/action_viewPagerSplashFragment_to_signInFragment"
+                app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/signInFragment"
+            android:name="com.example.routinerhabittracker.ui.fragments.login_screen.SignInFragment"
+            android:label="fragment_sign_in"
+            tools:layout="@layout/fragment_sign_in" >
+        <action
+                android:id="@+id/action_signInFragment_to_createAccountScreen1Fragment"
+                app:destination="@id/createAccountScreen1Fragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/createAccountScreen1Fragment"
+            android:name="com.example.routinerhabittracker.ui.fragments.create_account_screens.CreateAccountScreen1Fragment"
+            android:label="fragment_create_account_screen1"
+            tools:layout="@layout/fragment_create_account_screen1" >
+        <action
+                android:id="@+id/action_createAccountScreen1Fragment_to_createAccountScreen2Fragment"
+                app:destination="@id/createAccountScreen2Fragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/createAccountScreen2Fragment"
+            android:name="com.example.routinerhabittracker.ui.fragments.create_account_screens.CreateAccountScreen2Fragment"
+            android:label="fragment_create_account_screen2"
+            tools:layout="@layout/fragment_create_account_screen2" >
+        <action
+                android:id="@+id/action_createAccountScreen2Fragment_to_createAccountScreen3Fragment"
+                app:destination="@id/createAccountScreen3Fragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/createAccountScreen3Fragment"
+            android:name="com.example.routinerhabittracker.ui.fragments.create_account_screens.CreateAccountScreen3Fragment"
+            android:label="fragment_create_account_screen3"
+            tools:layout="@layout/fragment_create_account_screen3" />
 </navigation>

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.routinerhabittracker.R
 
 
-class CreateAccountScreen2ragment : Fragment() {
+class CreateAccountScreen2Fragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,7 @@ class CreateAccountScreen2ragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_account_screen2ragment, container, false)
+        return inflater.inflate(R.layout.fragment_create_account_screen2, container, false)
     }
 
 

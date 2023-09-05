@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.ViewPager2
 import com.example.routinerhabittracker.R
 import com.example.routinerhabittracker.adapter.ViewPagerAdapter
 import com.example.routinerhabittracker.databinding.FragmentSplashBinding
@@ -17,6 +18,8 @@ class ViewPagerSplashFragment : Fragment() {
     private  var _binding: FragmentViewPagerSplashBinding?=null
     private val binding get()= _binding!!
     private lateinit var navControler: NavController
+
+//    lateinit var splashViewPager:ViewPager2
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         navControler = findNavController()
@@ -29,6 +32,7 @@ class ViewPagerSplashFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentViewPagerSplashBinding.inflate(inflater, container, false)
         val view = binding.root
+//        splashViewPager = requireActivity().findViewById(R.id.splashViewPager)
 
         val fragmentList = arrayListOf<Fragment>(
                 SplashPager1Fragment(),
@@ -42,7 +46,12 @@ class ViewPagerSplashFragment : Fragment() {
             lifecycle
         )
         binding.splashViewPager.adapter = adapter
-        binding.indicator.setViewPager(binding.splashViewPager)
+
+        binding.emailBtn.setOnClickListener{
+            val action = ViewPagerSplashFragmentDirections.actionViewPagerSplashFragmentToSignInFragment()
+            navControler.navigate(action)
+        }
+
         return view
     }
 

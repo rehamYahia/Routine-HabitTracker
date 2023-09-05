@@ -9,7 +9,7 @@
     <color name="black">#FF000000</color>
     <color name="babyGrey">#EDEBED</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="shapeColor1">#EAECF0</color>
+    <color name="shapeColor1">#EEEFF1</color>
     <color name="shapeColor2">#FCDCD3</color>
     <color name="shapeColor3">#D7D9FF</color>
     <color name="shapeColor4">#BBE5FA</color>
@@ -20,5 +20,5 @@
     <color name="shapeColor9">#D5ECE0</color>
     <color name="shapeColor10">#6B73FF</color>
     <color name="grey">#535A72</color>
-    <color name="greenLight">#F7FCFB</color>
+    <color name="greenLight">#F0F8F7</color>
 </resources>

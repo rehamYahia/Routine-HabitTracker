@@ -35,6 +35,7 @@ class SplashFragment : Fragment() {
         Handler().postDelayed({
                               val action =com.example.routinerhabittracker.ui.fragments.splash_screens.SplashFragmentDirections.actionSplashFragmentToViewPagerSplashFragment()
 
+
             navControler.navigate(action)
         } , 9000)
     }

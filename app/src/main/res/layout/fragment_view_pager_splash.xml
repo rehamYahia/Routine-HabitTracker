@@ -10,22 +10,22 @@
     tools:ignore="MissingClass">
 
 
-
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/splashViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="500sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/splashViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="500sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <me.relex.circleindicator.CircleIndicator-->
-<!--            android:id="@+id/indicator"-->
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--            android:id="@+id/into_tab_layout"-->
 <!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="48dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:tabBackground="@drawable/tab_pager_selector"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
 <!--            tools:ignore="MissingConstraints"/>-->
-
-
 
     <Button
         android:id="@+id/emailBtn"
@@ -35,6 +35,9 @@
         android:backgroundTint="@color/babyGrey"
         android:text="Continue With E-mail"
         android:textColor="@color/black"
+        android:theme="@style/Theme.RoutinerHabitTracker"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/splashViewPager" />

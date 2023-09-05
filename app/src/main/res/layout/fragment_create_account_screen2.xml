@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.create_account_screens.CreateAccountScreen3Fragment"
+    tools:context=".ui.fragments.create_account_screens.CreateAccountScreen2Fragment"
     android:orientation="vertical"
     android:background="@color/greenLight"
     android:theme="@style/Theme.SignIn"
@@ -26,8 +26,11 @@
                     android:textColor="@color/black"
                     android:layout_centerInParent="true"
                     />
+
+
+
             <ImageView
-                    android:id="@+id/registerLeft3"
+                    android:id="@+id/registerLeft2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/arrow_left"
@@ -38,23 +41,22 @@
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
-<androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/habbitRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-    />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/genderRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        />
 
     <Button
-            android:id="@+id/next3"
+            android:id="@+id/next2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Next"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_40sdp"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             android:background="@drawable/email_button"
             />
-
-
 
 </LinearLayout>
