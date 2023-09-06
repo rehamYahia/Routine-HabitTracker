@@ -44,4 +44,14 @@
             android:layout_marginTop="8dp"
             app:layout_constraintHorizontal_bias="0.173" />
 
+<!--    <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Everyday you become one step closer to your goal. Don’t give up!"-->
+<!--            android:textColor="@color/babyGrey"-->
+<!--            android:textSize="@dimen/_10sdp"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView2"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent" />-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

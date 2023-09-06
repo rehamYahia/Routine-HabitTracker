@@ -95,14 +95,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
             android:text="Dont have account?"
-            android:textSize="@dimen/_15sdp"/>
+            android:textSize="@dimen/_14sdp"/>
         <TextView
                 android:id="@+id/letsCreate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lets create!"
                 android:textColor="@color/purple_500"
-                android:textSize="@dimen/_17sdp"/>
+                android:textSize="@dimen/_14sdp"/>
 
 </LinearLayout>
 

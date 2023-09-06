@@ -8,6 +8,8 @@
     android:background="@color/greenLight"
     android:theme="@style/Theme.SignIn"
     >
+
+
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_60sdp"
@@ -42,10 +44,27 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/genderRecyclerView"
-            android:layout_width="match_parent"
+    <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Choose your gender"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/genderRecyclerView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--        />-->
+    <GridView
+            android:id="@+id/genderGridView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numColumns="2"
         />
 
     <Button
