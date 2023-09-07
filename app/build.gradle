@@ -5,6 +5,7 @@ plugins {
     id("com.google.dagger.hilt.android")
     id("androidx.navigation.safeargs")
     id("kotlin-parcelize")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -111,7 +112,8 @@ dependencies {
     implementation "com.google.android.material:material:material_design_version"
     implementation "androidx.viewpager2:viewpager2:view_pager_version"
 
-
+    //firebase
+    implementation(platform("com.google.firebase:firebase-bom:32.2.3"))
 }
 kapt {
     correctErrorTypes = true

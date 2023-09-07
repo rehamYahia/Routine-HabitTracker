@@ -55,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:hint="E-MAIL"
                 android:textColor="@color/black"
+                android:inputType="textEmailAddress"
                 />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:hint="PASSWORD"
                 android:textColor="@color/black"
+                android:inputType="textPassword"
                 />
     </com.google.android.material.textfield.TextInputLayout>
 

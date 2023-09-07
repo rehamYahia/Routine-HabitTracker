@@ -55,8 +55,9 @@
         <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="SURNAME"
+                android:hint="Name"
                 android:textColor="@color/black"
+                android:inputType="text"
                 />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,13 +74,14 @@
         <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="E-MAIL"
+                android:hint="E-mail"
                 android:textColor="@color/black"
+                android:inputType="textEmailAddress"
                 />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/register_date_field"
+            android:id="@+id/register_pass__field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:ignore="DuplicateIds,MissingConstraints"
@@ -90,37 +92,45 @@
         <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="BIRTHDATE"
+                android:hint="Password"
                 android:textColor="@color/black"
+                android:inputType="textPassword"
                 />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/register_password_field"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="DuplicateIds,MissingConstraints"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            >
-        <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="PASSWORD"
-                android:textColor="@color/black"
-                />
-    </com.google.android.material.textfield.TextInputLayout>
+ <TextView
+         android:id="@+id/birthDate"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textColor="@color/black"
+         android:textStyle="bold"
+         android:layout_marginTop="@dimen/_20sdp"
+         android:textSize="@dimen/_14sdp"
+         android:text="bfjfjc"
+         android:layout_marginStart="@dimen/_25sdp"
+     />
+   <Button
+           android:id="@+id/btn_birthDate"
+           android:text="Your Birth date"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+          android:background="@drawable/email_button"
+           android:backgroundTint="@color/black"
+           android:layout_marginStart="@dimen/_16sdp"
+           android:layout_marginTop="@dimen/_10sdp"
+
+       />
 
  <Button
          android:id="@+id/next1"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-     android:text="Next"
+         android:text="Next"
          android:layout_marginTop="@dimen/_20sdp"
          android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
+         android:layout_marginEnd="@dimen/_20sdp"
          android:background="@drawable/email_button"
+
      />
 
 

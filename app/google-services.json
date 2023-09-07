@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "440890472770",
+    "project_id": "routine-habit-tracker",
+    "storage_bucket": "routine-habit-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440890472770:android:03b7b2bc609d7ea772f0db",
+        "android_client_info": {
+          "package_name": "com.example.routinerhabittracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440890472770-i8h3igf4tk84ntlntt25jj683pf031eq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7H6wsxbmEgl4YFv3lsHdXuFQZRihKP2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440890472770-i8h3igf4tk84ntlntt25jj683pf031eq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
