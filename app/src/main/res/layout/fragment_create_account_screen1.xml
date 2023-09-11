@@ -106,7 +106,6 @@
          android:textStyle="bold"
          android:layout_marginTop="@dimen/_20sdp"
          android:textSize="@dimen/_14sdp"
-         android:text="bfjfjc"
          android:layout_marginStart="@dimen/_25sdp"
      />
    <Button

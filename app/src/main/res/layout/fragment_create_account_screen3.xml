@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragments.create_account_screens.CreateAccountScreen3Fragment"
-    android:orientation="vertical"
-    android:background="@color/greenLight"
-    android:theme="@style/Theme.SignIn"
-    >
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".ui.fragments.create_account_screens.CreateAccountScreen3Fragment"
+        android:orientation="vertical"
+        android:background="@color/greenLight"
+        android:theme="@style/Theme.SignIn">
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_60sdp"
@@ -56,24 +56,407 @@
             android:text="You may add more habits later"
             android:layout_marginStart="@dimen/_16sdp"
             />
-<GridView
-        android:id="@+id/habbitGridView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numColumns="2"
-    />
+<!--<GridView-->
+<!--        android:id="@+id/habbitGridView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:numColumns="2"-->
+<!--    />-->
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/journal_card"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:checkable="true"
+                    android:foreground="@drawable/effect"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    android:elevation="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardBackgroundColor="@color/white"
+                    >
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+                    <ImageView
+                            android:id="@+id/journal_icon"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:src="@drawable/journal"
+                            android:contentDescription="image" />
+                    <TextView
+                            android:id="@+id/jurnal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jurnal"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:textSize="@dimen/_13sdp"
+                            />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
 
-    <Button
-            android:id="@+id/next3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Next"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_20sdp"
-            android:background="@drawable/email_button"
-            />
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/run_card"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:checkable="true"
+                    android:foreground="@drawable/effect"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    android:elevation="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardBackgroundColor="@color/white"
+                    >
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+                    <ImageView
+                            android:id="@+id/run_icon"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:src="@drawable/run"
+                            android:contentDescription="image" />
+                    <TextView
+                            android:id="@+id/run"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Run"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:textSize="@dimen/_13sdp"
+                            />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/drinkwater_card"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:checkable="true"
+                    android:foreground="@drawable/effect"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    android:elevation="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardBackgroundColor="@color/white"
+                    >
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+                    <ImageView
+                            android:id="@+id/drinkwater_icon"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:src="@drawable/drink_water"
+                            android:contentDescription="image" />
+                    <TextView
+                            android:id="@+id/drink_water"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Drink Water"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:textSize="@dimen/_13sdp"
+                            />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/readbooks_card"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:checkable="true"
+                    android:foreground="@drawable/effect"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    android:elevation="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardBackgroundColor="@color/white"
+                    >
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+                    <ImageView
+                            android:id="@+id/readbooks_icon"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:src="@drawable/read_books"
+                            android:contentDescription="image" />
+                    <TextView
+                            android:id="@+id/read_books"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Read Books"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:textSize="@dimen/_13sdp"
+                            />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/meditation_card"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:checkable="true"
+                    android:foreground="@drawable/effect"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    android:elevation="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardBackgroundColor="@color/white"
+                    >
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+                    <ImageView
+                            android:id="@+id/meditation_icon"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:src="@drawable/meditation"
+                            android:contentDescription="image" />
+                    <TextView
+                            android:id="@+id/meditation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Meditation"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:textSize="@dimen/_13sdp"
+                            />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/plant_card"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:checkable="true"
+                    android:foreground="@drawable/effect"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    android:elevation="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardBackgroundColor="@color/white"
+                    >
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+                    <ImageView
+                            android:id="@+id/plant_icon"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:src="@drawable/plant"
+                            android:contentDescription="image" />
+                    <TextView
+                            android:id="@+id/plant"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Plant"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:textSize="@dimen/_13sdp"
+                            />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/study_card"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:checkable="true"
+                    android:foreground="@drawable/effect"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    android:elevation="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardBackgroundColor="@color/white"
+                    >
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+                    <ImageView
+                            android:id="@+id/study_icon"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:src="@drawable/study"
+                            android:contentDescription="image" />
+                    <TextView
+                            android:id="@+id/study"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Study"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:textSize="@dimen/_13sdp"
+                            />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/sleep_card"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:checkable="true"
+                    android:foreground="@drawable/effect"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    android:elevation="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:cardBackgroundColor="@color/white"
+                    >
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+                    <ImageView
+                            android:id="@+id/sleep_icon"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:src="@drawable/sleep"
+                            android:contentDescription="image" />
+                    <TextView
+                            android:id="@+id/sleep"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sleep"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:textSize="@dimen/_13sdp"
+                            />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+
+        <Button
+                android:id="@+id/next3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Next"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@drawable/email_button"
+                />
+
+
 
 
 

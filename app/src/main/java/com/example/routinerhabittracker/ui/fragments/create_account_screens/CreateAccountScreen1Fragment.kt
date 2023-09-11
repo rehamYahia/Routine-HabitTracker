@@ -10,12 +10,15 @@ import android.widget.DatePicker
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.routinerhabittracker.databinding.FragmentCreateAccountScreen1Binding
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class CreateAccountScreen1Fragment : Fragment() {
     private  var _binding: FragmentCreateAccountScreen1Binding?=null
     private val binding get()= _binding!!
     private lateinit var navControler: NavController
+    private val calendar = Calendar.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         navControler = findNavController()
@@ -33,21 +36,39 @@ class CreateAccountScreen1Fragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
+
+
         binding.btnBirthDate.setOnClickListener {
             openDialog()
+
         }
+
         binding.next1.setOnClickListener {
             val action = CreateAccountScreen1FragmentDirections.actionCreateAccountScreen1FragmentToCreateAccountScreen2Fragment()
             navControler.navigate(action)
         }
     }
 
-    private fun openDialog(){
-        val dialog : DatePickerDialog = DatePickerDialog(requireActivity().applicationContext ,DatePickerDialog.OnDateSetListener()
-        { datePicker: DatePicker, year: Int, month: Int, day: Int ->
-            binding.birthDate.text = ("$year" + "." + "$month" + "." + "$day")
 
-        } , 2023 , 0 , 15)
+
+
+    private fun openDialog(){
+        val dialog : DatePickerDialog = DatePickerDialog(requireContext(),{
+            DatePicker , year:Int , monthOfYear:Int , dayOfYear:Int ->
+            val selectedData = Calendar.getInstance()
+            selectedData.set(year , monthOfYear , dayOfYear)
+            val dateFormate = SimpleDateFormat("dd/mm/yyy" , Locale.getDefault())
+            val formateData = dateFormate.format(selectedData.time)
+            binding.birthDate.text = "Birth date:"+ formateData
+
+        },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+
+        )
         dialog.show()
     }
 
