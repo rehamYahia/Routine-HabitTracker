@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.routinerhabittracker.databinding.FragmentCreateAccountScreen2Binding
-
+import dagger.hilt.android.AndroidEntryPoint
 
 
 class CreateAccountScreen2Fragment : Fragment()  //, AdapterView.OnItemClickListener

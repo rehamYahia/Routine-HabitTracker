@@ -7,9 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.routinerhabittracker.databinding.FragmentCreateAccountScreen1Binding
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -19,8 +25,10 @@ class CreateAccountScreen1Fragment : Fragment() {
     private val binding get()= _binding!!
     private lateinit var navControler: NavController
     private val calendar = Calendar.getInstance()
+    private lateinit var firebaseAuth:FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        firebaseAuth = FirebaseAuth.getInstance()
         navControler = findNavController()
     }
 
@@ -46,8 +54,31 @@ class CreateAccountScreen1Fragment : Fragment() {
         }
 
         binding.next1.setOnClickListener {
-            val action = CreateAccountScreen1FragmentDirections.actionCreateAccountScreen1FragmentToCreateAccountScreen2Fragment()
-            navControler.navigate(action)
+
+            val email:String = binding.registerEmailField.editText?.text.toString()
+            val password:String = binding.registerPassField.editText?.text.toString()
+            val name:String = binding.registerNameField.editText?.text.toString()
+            val birthDate:String = binding.birthDate.text.toString()
+            if(email.trim().isNotEmpty() && password.trim().isNotEmpty() &&
+                name.trim().isNotEmpty() && birthDate.trim().isNotEmpty()){
+                binding.registerProgress.visibility = View.VISIBLE
+                firebaseAuth.createUserWithEmailAndPassword(email , password )
+                    .addOnCompleteListener {
+                        if(it.isSuccessful){
+                            binding.registerProgress.visibility = View.INVISIBLE
+                            Toast.makeText(activity ,"your profile created " , Toast.LENGTH_LONG).show()
+                            val action = CreateAccountScreen1FragmentDirections.actionCreateAccountScreen1FragmentToCreateAccountScreen2Fragment()
+                            navControler.navigate(action)
+                        }else{
+                            binding.registerProgress.visibility = View.INVISIBLE
+                            Toast.makeText(activity ,it.exception.toString() , Toast.LENGTH_LONG).show()
+                        }
+                    }
+            }else{
+                Toast.makeText(activity , "Please complete your information " , Toast.LENGTH_LONG).show()
+            }
+
+
         }
     }
 

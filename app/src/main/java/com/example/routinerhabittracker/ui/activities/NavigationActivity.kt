@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import com.example.routinerhabittracker.R
 import com.example.routinerhabittracker.databinding.ActivityNavigationBinding
+import dagger.hilt.android.AndroidEntryPoint
+
 
 class NavigationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNavigationBinding
