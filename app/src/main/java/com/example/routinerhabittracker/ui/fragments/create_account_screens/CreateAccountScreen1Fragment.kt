@@ -2,20 +2,16 @@ package com.example.routinerhabittracker.ui.fragments.create_account_screens
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.routinerhabittracker.databinding.FragmentCreateAccountScreen1Binding
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -25,36 +21,30 @@ class CreateAccountScreen1Fragment : Fragment() {
     private val binding get()= _binding!!
     private lateinit var navControler: NavController
     private val calendar = Calendar.getInstance()
-    private lateinit var firebaseAuth:FirebaseAuth
+    private  var firebaseAuth:FirebaseAuth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        firebaseAuth = FirebaseAuth.getInstance()
         navControler = findNavController()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentCreateAccountScreen1Binding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
-
-
+        
         binding.btnBirthDate.setOnClickListener {
             openDialog()
 
         }
 
         binding.next1.setOnClickListener {
-
+//            firebaseAuth = FirebaseAuth.getInstance()
             val email:String = binding.registerEmailField.editText?.text.toString()
             val password:String = binding.registerPassField.editText?.text.toString()
             val name:String = binding.registerNameField.editText?.text.toString()
@@ -70,6 +60,8 @@ class CreateAccountScreen1Fragment : Fragment() {
                             val action = CreateAccountScreen1FragmentDirections.actionCreateAccountScreen1FragmentToCreateAccountScreen2Fragment()
                             navControler.navigate(action)
                         }else{
+                            Log.d("reham1" , it.exception.toString())
+                            binding.error.text = it.exception.toString()
                             binding.registerProgress.visibility = View.INVISIBLE
                             Toast.makeText(activity ,it.exception.toString() , Toast.LENGTH_LONG).show()
                         }
