@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "440890472770",
-    "project_id": "routine-habit-tracker",
-    "storage_bucket": "routine-habit-tracker.appspot.com"
+    "project_number": "110808542909",
+    "project_id": "routine-habbite-tracker",
+    "storage_bucket": "routine-habbite-tracker.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:440890472770:android:03b7b2bc609d7ea772f0db",
+        "mobilesdk_app_id": "1:110808542909:android:ebc730a9276c82708d91d4",
         "android_client_info": {
           "package_name": "com.example.routinerhabittracker"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "440890472770-i8h3igf4tk84ntlntt25jj683pf031eq.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD7H6wsxbmEgl4YFv3lsHdXuFQZRihKP2o"
+          "current_key": "AIzaSyB4WBWluhTcsJZJqNR0UiNWbU6BFjl-DXo"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "440890472770-i8h3igf4tk84ntlntt25jj683pf031eq.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

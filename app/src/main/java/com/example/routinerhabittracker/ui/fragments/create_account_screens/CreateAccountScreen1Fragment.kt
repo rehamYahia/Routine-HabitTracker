@@ -12,6 +12,8 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.routinerhabittracker.databinding.FragmentCreateAccountScreen1Binding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -21,9 +23,10 @@ class CreateAccountScreen1Fragment : Fragment() {
     private val binding get()= _binding!!
     private lateinit var navControler: NavController
     private val calendar = Calendar.getInstance()
-    private  var firebaseAuth:FirebaseAuth = FirebaseAuth.getInstance()
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        auth = Firebase.auth
         navControler = findNavController()
     }
 
@@ -44,7 +47,7 @@ class CreateAccountScreen1Fragment : Fragment() {
         }
 
         binding.next1.setOnClickListener {
-//            firebaseAuth = FirebaseAuth.getInstance()
+
             val email:String = binding.registerEmailField.editText?.text.toString()
             val password:String = binding.registerPassField.editText?.text.toString()
             val name:String = binding.registerNameField.editText?.text.toString()
@@ -52,7 +55,7 @@ class CreateAccountScreen1Fragment : Fragment() {
             if(email.trim().isNotEmpty() && password.trim().isNotEmpty() &&
                 name.trim().isNotEmpty() && birthDate.trim().isNotEmpty()){
                 binding.registerProgress.visibility = View.VISIBLE
-                firebaseAuth.createUserWithEmailAndPassword(email , password )
+                auth.createUserWithEmailAndPassword(email , password )
                     .addOnCompleteListener {
                         if(it.isSuccessful){
                             binding.registerProgress.visibility = View.INVISIBLE
