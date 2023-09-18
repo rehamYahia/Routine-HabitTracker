@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.routinerhabittracker.databinding.FragmentCreateAccountScreen1Binding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
 import java.util.*
@@ -62,6 +63,7 @@ class CreateAccountScreen1Fragment : Fragment() {
                             Toast.makeText(activity ,"your profile created " , Toast.LENGTH_LONG).show()
                             val action = CreateAccountScreen1FragmentDirections.actionCreateAccountScreen1FragmentToCreateAccountScreen2Fragment()
                             navControler.navigate(action)
+                            contentToRealTime(name , email , password , birthDate)
                         }else{
                             Log.d("reham1" , it.exception.toString())
                             binding.error.text = it.exception.toString()
@@ -96,6 +98,18 @@ class CreateAccountScreen1Fragment : Fragment() {
 
         )
         dialog.show()
+    }
+
+    fun contentToRealTime( name:String , email:String , password:String , birthDate:String ){
+
+        val database = Firebase.database
+        val myRef = database.getReference()
+
+        myRef.child("name").setValue(name)
+        myRef.child("email").setValue(email)
+        myRef.child("password").setValue(password)
+        myRef.child("birthDate").setValue(birthDate)
+
     }
 
 }

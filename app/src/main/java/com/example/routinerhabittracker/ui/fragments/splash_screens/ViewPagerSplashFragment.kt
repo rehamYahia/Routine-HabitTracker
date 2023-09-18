@@ -30,25 +30,19 @@ class ViewPagerSplashFragment : Fragment() {
     private val binding get()= _binding!!
     private lateinit var navControler: NavController
 
-    companion object {
-        private const val RC_SIGN_IN = 9001
-    }
 
-    private lateinit var auth: FirebaseAuth
+//    companion object {
+//        private const val RC_SIGN_IN = 9001
+//    }
+//
+//    private lateinit var auth: FirebaseAuth
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        auth = FirebaseAuth.getInstance()
+
         navControler = findNavController()
-
-        val currentUser = auth.currentUser
-
-        if (currentUser != null) {
-            val action = ViewPagerSplashFragmentDirections.actionViewPagerSplashFragmentToHomeFragment()
-            navControler.navigate(action)
-        }
 
     }
 
@@ -62,9 +56,13 @@ class ViewPagerSplashFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentViewPagerSplashBinding.inflate(inflater, container, false)
         val view = binding.root
+//        auth = FirebaseAuth.getInstance()
+//        val currentUser = auth.currentUser
 
-
-
+//        if (currentUser != null) {
+//            val action = ViewPagerSplashFragmentDirections.actionViewPagerSplashFragmentToHomeFragment()
+//            navControler.navigate(action)
+//        }
 
         val fragmentList = arrayListOf<Fragment>(
                 SplashPager1Fragment(),
@@ -85,7 +83,7 @@ class ViewPagerSplashFragment : Fragment() {
             navControler.navigate(action)
         }
         binding.googleBtn.setOnClickListener {
-            signIn()
+//            signIn()
         }
 
         binding.facebookBtn.setOnClickListener {
@@ -96,48 +94,49 @@ class ViewPagerSplashFragment : Fragment() {
     }
 
 
-    private fun signIn() {
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.client_id))
-            .requestEmail()
-            .build()
 
-        val googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
-        val signInIntent = googleSignInClient.signInIntent
-        startActivityForResult(signInIntent, RC_SIGN_IN)
-    }
+//    private fun signIn() {
+//        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//            .requestIdToken(getString(R.string.client_id))
+//            .requestEmail()
+//            .build()
+//
+//        val googleSignInClient = GoogleSignIn.getClient(requireActivity(), gso)
+//        val signInIntent = googleSignInClient.signInIntent
+//        startActivityForResult(signInIntent, RC_SIGN_IN)
+//    }
 
 
 
-    @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (requestCode == RC_SIGN_IN) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            try {
-                val account = task.getResult(ApiException::class.java)
-                firebaseAuthWithGoogle(account.idToken!!)
-            } catch (e: ApiException) {
-                Toast.makeText(activity, "Google sign in failed: ${e.message}", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    private fun firebaseAuthWithGoogle(idToken: String) {
-        val credential = GoogleAuthProvider.getCredential(idToken, null)
-        auth.signInWithCredential(credential)
-            .addOnCompleteListener(requireActivity()) { task ->
-                if (task.isSuccessful) {
-                    val user = auth.currentUser
-                    Toast.makeText(activity, "Signed in as ${user?.displayName}", Toast.LENGTH_SHORT).show()
-                    val action = ViewPagerSplashFragmentDirections.actionViewPagerSplashFragmentToHomeFragment()
-                    navControler.navigate(action)
-                } else {
-                    Toast.makeText(activity, "Authentication failed", Toast.LENGTH_SHORT).show()
-                }
-            }
-    }
+//    @Deprecated("Deprecated in Java")
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//
+//        if (requestCode == RC_SIGN_IN) {
+//            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+//            try {
+//                val account = task.getResult(ApiException::class.java)
+//                firebaseAuthWithGoogle(account.idToken!!)
+//            } catch (e: ApiException) {
+//                Toast.makeText(activity, "Google sign in failed: ${e.message}", Toast.LENGTH_SHORT).show()
+//            }
+//        }
+//    }
+//
+//    private fun firebaseAuthWithGoogle(idToken: String) {
+//        val credential = GoogleAuthProvider.getCredential(idToken, null)
+//        auth.signInWithCredential(credential)
+//            .addOnCompleteListener(requireActivity()) { task ->
+//                if (task.isSuccessful) {
+//                    val user = auth.currentUser
+//                    Toast.makeText(activity, "Signed in as ${user?.displayName}", Toast.LENGTH_SHORT).show()
+//                    val action = ViewPagerSplashFragmentDirections.actionViewPagerSplashFragmentToHomeFragment()
+//                    navControler.navigate(action)
+//                } else {
+//                    Toast.makeText(activity, "Authentication failed", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//    }
 
 
 
