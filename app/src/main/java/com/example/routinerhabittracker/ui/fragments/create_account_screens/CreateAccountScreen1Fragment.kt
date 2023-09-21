@@ -60,10 +60,8 @@ class CreateAccountScreen1Fragment : Fragment() {
                     .addOnCompleteListener {
                         if(it.isSuccessful){
                             binding.registerProgress.visibility = View.INVISIBLE
-                            Toast.makeText(activity ,"your profile created " , Toast.LENGTH_LONG).show()
-                            val action = CreateAccountScreen1FragmentDirections.actionCreateAccountScreen1FragmentToCreateAccountScreen2Fragment()
-                            navControler.navigate(action)
-                            contentToRealTime(name , email , password , birthDate)
+                            sendEmailVerification()
+//                            contentToRealTime(name , email , password , birthDate)
                         }else{
                             Log.d("reham1" , it.exception.toString())
                             binding.error.text = it.exception.toString()
@@ -110,6 +108,19 @@ class CreateAccountScreen1Fragment : Fragment() {
         myRef.child("password").setValue(password)
         myRef.child("birthDate").setValue(birthDate)
 
+    }
+
+    private fun sendEmailVerification(){
+        val user = auth.currentUser
+        user?.sendEmailVerification()?.addOnCompleteListener {
+            if(it.isSuccessful){
+                Toast.makeText(activity, "we send email massage to verify your account" , Toast.LENGTH_LONG).show()
+                val action = CreateAccountScreen1FragmentDirections.actionCreateAccountScreen1FragmentToSignInFragment()
+                navControler.navigate(action)
+            }else{
+                Toast.makeText(activity, it.exception.toString() , Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
 }

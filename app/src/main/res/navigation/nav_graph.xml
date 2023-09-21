@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_splashFragment_to_viewPagerSplashFragment"
             app:destination="@id/viewPagerSplashFragment" />
+        <action
+                android:id="@+id/action_splashFragment_to_homeFragment"
+                app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewPagerSplashFragment"
@@ -22,15 +25,18 @@
         <action
                 android:id="@+id/action_viewPagerSplashFragment_to_signInFragment"
                 app:destination="@id/signInFragment" />
-        <action
-                android:id="@+id/action_viewPagerSplashFragment_to_homeFragment"
-                app:destination="@id/homeFragment" />
     </fragment>
     <fragment
             android:id="@+id/signInFragment"
             android:name="com.example.routinerhabittracker.ui.fragments.login_screen.SignInFragment"
             android:label="fragment_sign_in"
             tools:layout="@layout/fragment_sign_in" >
+        <action
+                android:id="@+id/action_signInFragment_to_homeFragment"
+                app:destination="@id/homeFragment" />
+        <action
+                android:id="@+id/action_signInFragment_to_createAccountScreen2Fragment"
+                app:destination="@id/createAccountScreen2Fragment" />
         <action
                 android:id="@+id/action_signInFragment_to_createAccountScreen1Fragment"
                 app:destination="@id/createAccountScreen1Fragment" />
@@ -41,8 +47,8 @@
             android:label="fragment_create_account_screen1"
             tools:layout="@layout/fragment_create_account_screen1" >
         <action
-                android:id="@+id/action_createAccountScreen1Fragment_to_createAccountScreen2Fragment"
-                app:destination="@id/createAccountScreen2Fragment" />
+                android:id="@+id/action_createAccountScreen1Fragment_to_signInFragment"
+                app:destination="@id/signInFragment" />
     </fragment>
     <fragment
             android:id="@+id/createAccountScreen2Fragment"

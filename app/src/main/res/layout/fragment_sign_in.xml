@@ -46,8 +46,8 @@
             android:layout_height="wrap_content"
             tools:ignore="DuplicateIds,MissingConstraints"
             android:layout_marginTop="15dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
 
             >
         <com.google.android.material.textfield.TextInputEditText
@@ -66,8 +66,8 @@
             android:layout_height="wrap_content"
             tools:ignore="DuplicateIds,MissingConstraints"
             android:layout_marginTop="15dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             >
         <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -109,9 +109,10 @@
 </LinearLayout>
 
     <Button
+            android:id="@+id/login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Next"
+            android:text="Login"
             android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginEnd="@dimen/_20sdp"

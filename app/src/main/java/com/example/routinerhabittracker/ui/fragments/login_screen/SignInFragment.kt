@@ -5,20 +5,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import com.example.routinerhabittracker.R
 import com.example.routinerhabittracker.databinding.FragmentSignInBinding
-import com.example.routinerhabittracker.databinding.FragmentViewPagerSplashBinding
-import kotlinx.coroutines.flow.combine
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+
 
 class SignInFragment : Fragment() {
     private  var _binding: FragmentSignInBinding?=null
     private val binding get()= _binding!!
     private lateinit var navControler: NavController
+    private lateinit var auth:FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        auth = Firebase.auth
         navControler = findNavController()
     }
 
@@ -39,6 +43,41 @@ class SignInFragment : Fragment() {
             navControler.navigate(action)
         }
 
+
+
+        binding.loginBtn.setOnClickListener {
+            val email = binding.emailField.editText?.text.toString()
+            val password = binding.passwordField.editText?.text.toString()
+            if(email.isNotEmpty() && password.isNotEmpty()){
+            auth.signInWithEmailAndPassword(email , password)
+                .addOnCompleteListener {
+                    if(it.isSuccessful ){
+                        verifiedEmailAddress()
+                    }else{
+                        Toast.makeText(activity , "please check from your data" , Toast.LENGTH_LONG).show()
+                    }
+                }
+
+            }else{
+                Toast.makeText(activity , "please enter your data " , Toast.LENGTH_LONG).show()
+            }
+        }
+
+
+
+    }
+
+    private fun verifiedEmailAddress(){
+        val user = auth.currentUser
+        if (user != null) {
+            if(user.isEmailVerified){
+                Toast.makeText(activity , "login successful  " , Toast.LENGTH_LONG).show()
+                val action = SignInFragmentDirections.actionSignInFragmentToHomeFragment()
+                navControler.navigate(action)
+            }else{
+                Toast.makeText(activity , "please verified your email...  " , Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
 

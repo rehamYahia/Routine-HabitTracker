@@ -449,10 +449,10 @@
 
 
         <Button
-                android:id="@+id/next3"
+                android:id="@+id/goToLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Next"
+                android:text="Go to login"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_20sdp"

@@ -9,14 +9,19 @@ import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.routinerhabittracker.databinding.FragmentSplashBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 
 class SplashFragment : Fragment() {
     private  var _binding: FragmentSplashBinding?=null
     private val binding get()= _binding!!
     private lateinit var navControler: NavController
+    private lateinit var auth:FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        auth = Firebase.auth
         navControler = findNavController()
     }
 
@@ -38,6 +43,14 @@ class SplashFragment : Fragment() {
 
             navControler.navigate(action)
         } , 9000)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if(auth.currentUser == null){
+            val action = SplashFragmentDirections.actionSplashFragmentToHomeFragment()
+            navControler.navigate(action)
+        }
     }
 
 }

@@ -43,9 +43,8 @@ class CreateAccountScreen3Fragment : Fragment()  , AdapterView.OnItemClickListen
         habbitAdapter = activity?.let { HabbitAdapter(it, habbitArray) }!!
 
         initHabbitGridData()
-        binding.next3.setOnClickListener {
-            val action = CreateAccountScreen3FragmentDirections.actionCreateAccountScreen3FragmentToHomeFragment()
-            navControler.navigate(action)
+        binding.goToLogin.setOnClickListener {
+
         }
 
     }
