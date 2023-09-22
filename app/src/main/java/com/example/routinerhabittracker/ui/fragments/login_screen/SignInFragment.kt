@@ -72,7 +72,7 @@ class SignInFragment : Fragment() {
         if (user != null) {
             if(user.isEmailVerified){
                 Toast.makeText(activity , "login successful  " , Toast.LENGTH_LONG).show()
-                val action = SignInFragmentDirections.actionSignInFragmentToHomeFragment()
+                val action = SignInFragmentDirections.actionSignInFragmentToCreateAccountScreen2Fragment()
                 navControler.navigate(action)
             }else{
                 Toast.makeText(activity , "please verified your email...  " , Toast.LENGTH_LONG).show()

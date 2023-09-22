@@ -2,7 +2,6 @@ package com.example.routinerhabittracker.ui.fragments.create_account_screens
 
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.routinerhabittracker.databinding.FragmentCreateAccountScreen1Binding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.ktx.database
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
 import java.util.*
@@ -25,10 +24,13 @@ class CreateAccountScreen1Fragment : Fragment() {
     private lateinit var navControler: NavController
     private val calendar = Calendar.getInstance()
     private lateinit var auth: FirebaseAuth
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         auth = Firebase.auth
         navControler = findNavController()
+
     }
 
     override fun onCreateView(
@@ -41,29 +43,30 @@ class CreateAccountScreen1Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
+
+
+
         binding.btnBirthDate.setOnClickListener {
             openDialog()
 
         }
 
         binding.next1.setOnClickListener {
-
             val email:String = binding.registerEmailField.editText?.text.toString()
-            val password:String = binding.registerPassField.editText?.text.toString()
-            val name:String = binding.registerNameField.editText?.text.toString()
-            val birthDate:String = binding.birthDate.text.toString()
-            if(email.trim().isNotEmpty() && password.trim().isNotEmpty() &&
-                name.trim().isNotEmpty() && birthDate.trim().isNotEmpty()){
+            val password:String= binding.registerPassField.editText?.text.toString()
+            val name:String= binding.registerNameField.editText?.text.toString()
+            val birthDate:String= binding.birthDate.text.toString()
+
+            if(email.isNotEmpty() && password.isNotEmpty() &&
+                name.isNotEmpty() && birthDate.isNotEmpty()){
                 binding.registerProgress.visibility = View.VISIBLE
-                auth.createUserWithEmailAndPassword(email , password )
+                auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                         if(it.isSuccessful){
                             binding.registerProgress.visibility = View.INVISIBLE
                             sendEmailVerification()
-//                            contentToRealTime(name , email , password , birthDate)
+
                         }else{
-                            Log.d("reham1" , it.exception.toString())
                             binding.error.text = it.exception.toString()
                             binding.registerProgress.visibility = View.INVISIBLE
                             Toast.makeText(activity ,it.exception.toString() , Toast.LENGTH_LONG).show()
@@ -98,11 +101,10 @@ class CreateAccountScreen1Fragment : Fragment() {
         dialog.show()
     }
 
-    fun contentToRealTime( name:String , email:String , password:String , birthDate:String ){
+    private fun contentToRealTime(name:String, email:String, password:String, birthDate:String ){
 
-        val database = Firebase.database
-        val myRef = database.getReference()
-
+        val database = FirebaseDatabase.getInstance()
+        val myRef = database.getReference(binding.registerEmailField.editText?.text.toString())
         myRef.child("name").setValue(name)
         myRef.child("email").setValue(email)
         myRef.child("password").setValue(password)
@@ -114,9 +116,15 @@ class CreateAccountScreen1Fragment : Fragment() {
         val user = auth.currentUser
         user?.sendEmailVerification()?.addOnCompleteListener {
             if(it.isSuccessful){
+                contentToRealTime(binding.registerNameField.editText?.text.toString() ,
+                binding.registerEmailField.editText?.text.toString(),
+                    binding.registerPassField.editText?.text.toString(),
+                    binding.birthDate.text.toString()
+                )
                 Toast.makeText(activity, "we send email massage to verify your account" , Toast.LENGTH_LONG).show()
                 val action = CreateAccountScreen1FragmentDirections.actionCreateAccountScreen1FragmentToSignInFragment()
                 navControler.navigate(action)
+
             }else{
                 Toast.makeText(activity, it.exception.toString() , Toast.LENGTH_LONG).show()
             }
