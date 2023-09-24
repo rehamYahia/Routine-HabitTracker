@@ -25,7 +25,6 @@ class CreateAccountScreen1Fragment : Fragment() {
     private val calendar = Calendar.getInstance()
     private lateinit var auth: FirebaseAuth
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         auth = Firebase.auth
@@ -104,7 +103,7 @@ class CreateAccountScreen1Fragment : Fragment() {
     private fun contentToRealTime(name:String, email:String, password:String, birthDate:String ){
 
         val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference(binding.registerEmailField.editText?.text.toString())
+        val myRef = database.getReference(binding.registerNameField.editText?.text.toString())
         myRef.child("name").setValue(name)
         myRef.child("email").setValue(email)
         myRef.child("password").setValue(password)

@@ -50,7 +50,7 @@ class SplashFragment : Fragment() {
         if(auth.currentUser == null){
             val action = SplashFragmentDirections.actionSplashFragmentToHomeFragment()
             navControler.navigate(action)
-            navControler.popBackStack()
+//            navControler.popBackStack(null , true)
         }
     }
 
