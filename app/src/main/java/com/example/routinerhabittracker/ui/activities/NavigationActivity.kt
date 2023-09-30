@@ -7,7 +7,7 @@ import com.example.routinerhabittracker.R
 import com.example.routinerhabittracker.databinding.ActivityNavigationBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class NavigationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNavigationBinding
     override fun onCreate(savedInstanceState: Bundle?) {
