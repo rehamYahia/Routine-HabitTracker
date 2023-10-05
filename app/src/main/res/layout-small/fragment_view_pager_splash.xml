@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.splash_screens.ViewPagerSplashFragment"
+        android:background="@drawable/background_shape"
+        tools:ignore="MissingClass">
+
+
+    <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/splashViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_230sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+            android:id="@+id/emailBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continue With E-mail"
+            android:textSize="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:theme="@style/Theme.RoutinerHabitTracker"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/facebookBtn"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintHorizontal_bias="0.485" />
+
+    <Button
+            android:id="@+id/googleBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Google"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="4dp" />
+
+    <Button
+            android:id="@+id/facebookBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Facebook"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="4dp" />
+
+    <!--    <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:textSize="@dimen/_10sdp"-->
+    <!--            android:text="By continuing you agree Terms of Services & Privacy Policy "-->
+    <!--            android:textColor="@color/babyGrey"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/facebookBtn"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            android:layout_marginTop="20dp"-->
+    <!--            app:layout_constraintHorizontal_bias="0.492" />-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:text="By Continuing you agree terms of services and privacy policy"-->
+    <!--        android:textColor="@color/babyGrey"-->
+    <!--        android:textSize="@dimen/_9sdp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/googleBtn"-->
+    <!--        app:layout_constraintVertical_bias="0.0" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

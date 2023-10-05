@@ -1,5 +1,6 @@
 package com.example.routinerhabittracker.ui.fragments.create_account_screens
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,7 +20,7 @@ class CreateAccountScreen2Fragment : Fragment()  //, AdapterView.OnItemClickList
     private lateinit var navControler: NavController
 //   private lateinit var genderArray :ArrayList<Gender>
 //    var genderBoo = Array<Boolean>(2){false}
-
+ lateinit var sharedPreferences:SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +38,8 @@ class CreateAccountScreen2Fragment : Fragment()  //, AdapterView.OnItemClickList
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+//        sharedPreferences =
         binding.femaleCard.setOnClickListener {
             binding.femaleCard.isChecked = !binding.femaleCard.isChecked
             if(binding.femaleCard.isChecked){

@@ -1,5 +1,6 @@
 package com.example.routinerhabittracker.ui.fragments.login_screen
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,13 +13,15 @@ import com.example.routinerhabittracker.databinding.FragmentSignInBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class SignInFragment : Fragment() {
     private  var _binding: FragmentSignInBinding?=null
     private val binding get()= _binding!!
     private lateinit var navControler: NavController
     private lateinit var auth:FirebaseAuth
+    private val sharedPreferences:SharedPreferences ?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,6 +74,9 @@ class SignInFragment : Fragment() {
         val user = auth.currentUser
         if (user != null) {
             if(user.isEmailVerified){
+                val editor = sharedPreferences?.edit()
+                editor?.putBoolean("isLogin" , true )
+                editor?.apply()
                 Toast.makeText(activity , "login successful  " , Toast.LENGTH_LONG).show()
                 val action = SignInFragmentDirections.actionSignInFragmentToCreateAccountScreen2Fragment()
                 navControler.navigate(action)

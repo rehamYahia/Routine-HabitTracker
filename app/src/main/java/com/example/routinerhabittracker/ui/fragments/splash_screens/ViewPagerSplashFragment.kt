@@ -75,18 +75,18 @@ class ViewPagerSplashFragment : Fragment() {
             requireActivity().supportFragmentManager,
             lifecycle
         )
-        binding.splashViewPager.adapter = adapter
+        binding.splashViewPager?.adapter = adapter
 
 
-        binding.emailBtn.setOnClickListener{
+        binding.emailBtn?.setOnClickListener{
             val action = ViewPagerSplashFragmentDirections.actionViewPagerSplashFragmentToSignInFragment()
             navControler.navigate(action)
         }
-        binding.googleBtn.setOnClickListener {
+        binding.googleBtn?.setOnClickListener {
 //            signIn()
         }
 
-        binding.facebookBtn.setOnClickListener {
+        binding.facebookBtn?.setOnClickListener {
 
         }
 
