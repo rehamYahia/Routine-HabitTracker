@@ -9,6 +9,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class NavigationActivity : AppCompatActivity() {
+    // INITIALIZE FIELD
     private lateinit var binding: ActivityNavigationBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
