@@ -9,27 +9,60 @@
     android:background="@drawable/background_shape"
     >
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="@dimen/_70sdp"
-        android:layout_height="@dimen/_60sdp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="312dp"
-        android:src="@drawable/logo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guied1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent=".50"
+        />
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guied3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent=".80"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="324dp"
-        android:text="Routiner"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_30sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.139"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guied2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent=".20"
+            android:orientation="vertical"
+            />
+
+
+
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="@+id/guied1"
+            app:layout_constraintStart_toStartOf="@+id/guied2"
+            app:layout_constraintBottom_toBottomOf="@+id/guied3"
+
+            android:gravity="center"
+        >
+        <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                app:srcCompat="@drawable/logo"
+                app:layout_constraintDimensionRatio="1:1"
+
+                />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Routiner"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                />
+
+    </LinearLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
