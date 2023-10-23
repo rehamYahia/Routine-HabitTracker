@@ -21,7 +21,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Continue with E-mail"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/_20ssp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:layout_centerInParent="true"
@@ -45,9 +45,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:ignore="DuplicateIds,MissingConstraints"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
 
             >
         <com.google.android.material.textfield.TextInputEditText
@@ -65,9 +65,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:ignore="DuplicateIds,MissingConstraints"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
             >
         <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -83,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="I forgot my password"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="@dimen/_15ssp"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_10sdp"
             />
@@ -97,14 +97,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
             android:text="Dont have account?"
-            android:textSize="@dimen/_14sdp"/>
+            android:textSize="@dimen/_14ssp"/>
         <TextView
                 android:id="@+id/letsCreate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lets create!"
                 android:textColor="@color/purple_500"
-                android:textSize="@dimen/_14sdp"/>
+                android:textSize="@dimen/_14ssp"/>
 
 </LinearLayout>
 

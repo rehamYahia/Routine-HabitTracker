@@ -21,7 +21,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Create Account"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/_20ssp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:layout_centerInParent="true"
@@ -33,7 +33,7 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/arrow_left"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="@dimen/_16sdp"
 
                     />
 
@@ -46,18 +46,12 @@
             android:text="Choose your gender"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="@dimen/_15ssp"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_10sdp"
             />
 
 
-<!--    <GridView-->
-<!--            android:id="@+id/genderGridView"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:numColumns="2"-->
-<!--        />-->
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
