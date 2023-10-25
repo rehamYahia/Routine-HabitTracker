@@ -10,16 +10,17 @@ plugins {
 
 android {
     namespace 'com.example.routinerhabittracker'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.routinerhabittracker"
         minSdk 27
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -108,7 +109,7 @@ dependencies {
 
 
     //coil
-    implementation("io.coil-kt:coil:1.0.0-rc3")
+//    implementation("io.coil-kt:coil:1.0.0-rc3")
 
     //view pager
     implementation "com.google.android.material:material:material_design_version"
@@ -128,6 +129,9 @@ dependencies {
     implementation 'com.intuit.ssp:ssp-android:1.1.0'
 
 
+// New version
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
 
 }
 kapt {
