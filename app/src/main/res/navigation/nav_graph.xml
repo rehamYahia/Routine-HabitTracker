@@ -11,11 +11,19 @@
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
-            android:id="@+id/action_splashFragment_to_viewPagerSplashFragment"
-            app:destination="@id/viewPagerSplashFragment" />
+                android:id="@+id/action_splashFragment_to_viewPagerSplashFragment"
+                app:destination="@id/viewPagerSplashFragment"
+                app:enterAnim="@anim/enter_anim"
+                app:exitAnim="@anim/exit_anim"
+                app:popEnterAnim="@anim/pop_enter_anim"
+                app:popExitAnim="@anim/pop_exit_anim" />
         <action
                 android:id="@+id/action_splashFragment_to_homeFragment"
-                app:destination="@id/homeFragment" />
+                app:destination="@id/homeFragment"
+                app:enterAnim="@anim/enter_anim"
+                app:exitAnim="@anim/exit_anim"
+                app:popEnterAnim="@anim/pop_enter_anim"
+                app:popExitAnim="@anim/pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/viewPagerSplashFragment"
@@ -24,7 +32,11 @@
         tools:layout="@layout/fragment_view_pager_splash" >
         <action
                 android:id="@+id/action_viewPagerSplashFragment_to_signInFragment"
-                app:destination="@id/signInFragment" />
+                app:destination="@id/signInFragment"
+                app:enterAnim="@anim/enter_anim"
+                app:exitAnim="@anim/exit_anim"
+                app:popEnterAnim="@anim/pop_enter_anim"
+                app:popExitAnim="@anim/pop_exit_anim" />
     </fragment>
     <fragment
             android:id="@+id/signInFragment"
@@ -33,13 +45,25 @@
             tools:layout="@layout/fragment_sign_in" >
         <action
                 android:id="@+id/action_signInFragment_to_homeFragment"
-                app:destination="@id/homeFragment" />
+                app:destination="@id/homeFragment"
+                app:enterAnim="@anim/enter_anim"
+                app:exitAnim="@anim/exit_anim"
+                app:popEnterAnim="@anim/pop_enter_anim"
+                app:popExitAnim="@anim/pop_exit_anim" />
         <action
                 android:id="@+id/action_signInFragment_to_createAccountScreen2Fragment"
-                app:destination="@id/createAccountScreen2Fragment" />
+                app:destination="@id/createAccountScreen2Fragment"
+                app:enterAnim="@anim/enter_anim"
+                app:exitAnim="@anim/exit_anim"
+                app:popEnterAnim="@anim/pop_enter_anim"
+                app:popExitAnim="@anim/pop_exit_anim" />
         <action
                 android:id="@+id/action_signInFragment_to_createAccountScreen1Fragment"
-                app:destination="@id/createAccountScreen1Fragment" />
+                app:destination="@id/createAccountScreen1Fragment"
+                app:enterAnim="@anim/enter_anim"
+                app:exitAnim="@anim/exit_anim"
+                app:popEnterAnim="@anim/pop_enter_anim"
+                app:popExitAnim="@anim/pop_exit_anim" />
     </fragment>
     <fragment
             android:id="@+id/createAccountScreen1Fragment"
@@ -48,7 +72,11 @@
             tools:layout="@layout/fragment_create_account_screen1" >
         <action
                 android:id="@+id/action_createAccountScreen1Fragment_to_signInFragment"
-                app:destination="@id/signInFragment" />
+                app:destination="@id/signInFragment"
+                app:enterAnim="@anim/enter_anim"
+                app:exitAnim="@anim/exit_anim"
+                app:popEnterAnim="@anim/pop_enter_anim"
+                app:popExitAnim="@anim/pop_exit_anim" />
     </fragment>
     <fragment
             android:id="@+id/createAccountScreen2Fragment"
@@ -57,7 +85,11 @@
             tools:layout="@layout/fragment_create_account_screen2" >
         <action
                 android:id="@+id/action_createAccountScreen2Fragment_to_createAccountScreen3Fragment"
-                app:destination="@id/createAccountScreen3Fragment" />
+                app:destination="@id/createAccountScreen3Fragment"
+                app:enterAnim="@anim/enter_anim"
+                app:exitAnim="@anim/exit_anim"
+                app:popEnterAnim="@anim/pop_enter_anim"
+                app:popExitAnim="@anim/pop_exit_anim" />
     </fragment>
     <fragment
             android:id="@+id/createAccountScreen3Fragment"
@@ -66,7 +98,11 @@
             tools:layout="@layout/fragment_create_account_screen3" >
         <action
                 android:id="@+id/action_createAccountScreen3Fragment_to_homeFragment"
-                app:destination="@id/homeFragment" />
+                app:destination="@id/homeFragment"
+                app:enterAnim="@anim/enter_anim"
+                app:exitAnim="@anim/exit_anim"
+                app:popEnterAnim="@anim/pop_enter_anim"
+                app:popExitAnim="@anim/pop_exit_anim" />
     </fragment>
     <fragment
             android:id="@+id/homeFragment"

@@ -118,7 +118,8 @@ dependencies {
     //firebase
     implementation(platform("com.google.firebase:firebase-bom:32.2.3"))
     //firebase with email and password Authentication
-    implementation("com.google.firebase:firebase-auth-ktx")
+//    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-auth:22.2.0")
     //google firebase authentication
     implementation("com.google.android.gms:play-services-auth:20.7.0")
     //realTime database

@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
+import com.example.routinerhabittracker.R
 import com.example.routinerhabittracker.databinding.FragmentSplashBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -49,9 +51,9 @@ class SplashFragment : Fragment() {
                 navControler.navigate(actionToHome)
             }else{
                 val actionToSplash1 =com.example.routinerhabittracker.ui.fragments.splash_screens.SplashFragmentDirections.actionSplashFragmentToViewPagerSplashFragment()
-                navControler.navigate(actionToSplash1)
+                navControler.navigate(actionToSplash1 , NavOptions.Builder().setPopUpTo( R.id.splashFragment, true).build())
             }
-        } , 9000)
+        } , 5000)
     }
 
 //    override fun onStart() {
