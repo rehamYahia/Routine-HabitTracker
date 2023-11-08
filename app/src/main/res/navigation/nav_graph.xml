@@ -80,7 +80,7 @@
     </fragment>
     <fragment
             android:id="@+id/createAccountScreen2Fragment"
-            android:name="com.example.routinerhabittracker.ui.fragments.create_account_screens.CreateAccountScreen2Fragment"
+            android:name="com.example.routinerhabittracker.ui.fragments.login_screen.CreateAccountScreen2Fragment"
             android:label="fragment_create_account_screen2"
             tools:layout="@layout/fragment_create_account_screen2" >
         <action
@@ -93,7 +93,7 @@
     </fragment>
     <fragment
             android:id="@+id/createAccountScreen3Fragment"
-            android:name="com.example.routinerhabittracker.ui.fragments.create_account_screens.CreateAccountScreen3Fragment"
+            android:name="com.example.routinerhabittracker.ui.fragments.login_screen.CreateAccountScreen3Fragment"
             android:label="fragment_create_account_screen3"
             tools:layout="@layout/fragment_create_account_screen3" >
         <action

@@ -20,12 +20,13 @@ class SignInFragment : Fragment() {
     private  var _binding: FragmentSignInBinding?=null
     private val binding get()= _binding!!
     private lateinit var navControler: NavController
-    private lateinit var auth:FirebaseAuth
+    private  val auth:FirebaseAuth?=null
+
     private val sharedPreferences:SharedPreferences ?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        auth = Firebase.auth
+//        auth = Firebase.auth
         navControler = findNavController()
     }
 
@@ -52,7 +53,7 @@ class SignInFragment : Fragment() {
             val email = binding.emailField.editText?.text.toString()
             val password = binding.passwordField.editText?.text.toString()
             if(email.isNotEmpty() && password.isNotEmpty()){
-            auth.signInWithEmailAndPassword(email , password)
+            auth!!.signInWithEmailAndPassword(email , password)
                 .addOnCompleteListener {
                     if(it.isSuccessful ){
                         verifiedEmailAddress()
@@ -71,7 +72,7 @@ class SignInFragment : Fragment() {
     }
 
     private fun verifiedEmailAddress(){
-        val user = auth.currentUser
+        val user = auth!!.currentUser
         if (user != null) {
             if(user.isEmailVerified){
                 val editor = sharedPreferences?.edit()

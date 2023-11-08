@@ -14,20 +14,23 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
+import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
 
-
+@AndroidEntryPoint
 class CreateAccountScreen1Fragment : Fragment() {
     private  var _binding: FragmentCreateAccountScreen1Binding?=null
     private val binding get()= _binding!!
     private lateinit var navControler: NavController
     private val calendar = Calendar.getInstance()
-    private lateinit var auth: FirebaseAuth
+    private  val auth: FirebaseAuth?=null
+    private lateinit var database :FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        auth = Firebase.auth
+//        auth = Firebase.auth
         navControler = findNavController()
 
     }
@@ -59,7 +62,7 @@ class CreateAccountScreen1Fragment : Fragment() {
             if(email.isNotEmpty() && password.isNotEmpty() &&
                 name.isNotEmpty() && birthDate.isNotEmpty()){
                 binding.registerProgress.visibility = View.VISIBLE
-                auth.createUserWithEmailAndPassword(email, password)
+                auth!!.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                         if(it.isSuccessful){
                             binding.registerProgress.visibility = View.INVISIBLE
@@ -102,7 +105,7 @@ class CreateAccountScreen1Fragment : Fragment() {
 
     private fun contentToRealTime(name:String, email:String, password:String, birthDate:String ){
 
-        val database = FirebaseDatabase.getInstance()
+//        val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference(binding.registerNameField.editText?.text.toString())
         myRef.child("name").setValue(name)
         myRef.child("email").setValue(email)
@@ -112,7 +115,7 @@ class CreateAccountScreen1Fragment : Fragment() {
     }
 
     private fun sendEmailVerification(){
-        val user = auth.currentUser
+        val user = auth!!.currentUser
         user?.sendEmailVerification()?.addOnCompleteListener {
             if(it.isSuccessful){
                 contentToRealTime(binding.registerNameField.editText?.text.toString() ,

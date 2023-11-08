@@ -1,19 +1,16 @@
-package com.example.routinerhabittracker.ui.fragments.create_account_screens
+package com.example.routinerhabittracker.ui.fragments.login_screen
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.routinerhabittracker.R
 import com.example.routinerhabittracker.adapter.HabbitAdapter
-import com.example.routinerhabittracker.databinding.FragmentCreateAccountScreen1Binding
 import com.example.routinerhabittracker.databinding.FragmentCreateAccountScreen3Binding
 import com.example.routinerhabittracker.model.Habbit
 

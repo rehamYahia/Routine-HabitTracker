@@ -10,15 +10,15 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
-@Module
-@InstallIn(SingletonComponent::class)
+//@Module
+//@InstallIn(SingletonComponent::class)
 class SharedPerfModule {
 
-    @Provides
-    @Singleton
-    fun provideShard(context :Application):SharedPreferences
-    {
-       val shared =  context.getSharedPreferences(context.getString(R.string.app_name) , Context.MODE_PRIVATE)
-        return shared
-    }
+//    @Provides
+//    @Singleton
+//    fun provideShard(context :Application):SharedPreferences
+//    {
+//       val shared =  context.getSharedPreferences(context.getString(R.string.app_name) , Context.MODE_PRIVATE)
+//        return shared
+//    }
 }

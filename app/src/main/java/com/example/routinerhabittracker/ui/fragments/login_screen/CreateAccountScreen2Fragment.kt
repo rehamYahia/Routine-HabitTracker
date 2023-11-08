@@ -1,4 +1,4 @@
-package com.example.routinerhabittracker.ui.fragments.create_account_screens
+package com.example.routinerhabittracker.ui.fragments.login_screen
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -6,11 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.routinerhabittracker.databinding.FragmentCreateAccountScreen2Binding
-import dagger.hilt.android.AndroidEntryPoint
+
 
 
 class CreateAccountScreen2Fragment : Fragment()  //, AdapterView.OnItemClickListener
@@ -54,7 +53,8 @@ class CreateAccountScreen2Fragment : Fragment()  //, AdapterView.OnItemClickList
         }
 
         binding.next2.setOnClickListener {
-            val action = CreateAccountScreen2FragmentDirections.actionCreateAccountScreen2FragmentToCreateAccountScreen3Fragment()
+            val action =
+                CreateAccountScreen2FragmentDirections.actionCreateAccountScreen2FragmentToCreateAccountScreen3Fragment()
             navControler.navigate(action)
         }
     }
