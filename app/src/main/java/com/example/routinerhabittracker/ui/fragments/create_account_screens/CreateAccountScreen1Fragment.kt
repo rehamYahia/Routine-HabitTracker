@@ -10,11 +10,10 @@ import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.routinerhabittracker.databinding.FragmentCreateAccountScreen1Binding
+import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.auth
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
-import dagger.hilt.EntryPoint
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.*
@@ -25,12 +24,12 @@ class CreateAccountScreen1Fragment : Fragment() {
     private val binding get()= _binding!!
     private lateinit var navControler: NavController
     private val calendar = Calendar.getInstance()
-    private  val auth: FirebaseAuth?=null
-    private lateinit var database :FirebaseDatabase
+    lateinit var auth: FirebaseAuth
+    lateinit var database :FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        auth = Firebase.auth
+        auth = Firebase.auth
         navControler = findNavController()
 
     }
@@ -62,7 +61,7 @@ class CreateAccountScreen1Fragment : Fragment() {
             if(email.isNotEmpty() && password.isNotEmpty() &&
                 name.isNotEmpty() && birthDate.isNotEmpty()){
                 binding.registerProgress.visibility = View.VISIBLE
-                auth!!.createUserWithEmailAndPassword(email, password)
+                auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                         if(it.isSuccessful){
                             binding.registerProgress.visibility = View.INVISIBLE
@@ -77,8 +76,6 @@ class CreateAccountScreen1Fragment : Fragment() {
             }else{
                 Toast.makeText(activity , "Please complete your information " , Toast.LENGTH_LONG).show()
             }
-
-
         }
     }
 
@@ -115,7 +112,7 @@ class CreateAccountScreen1Fragment : Fragment() {
     }
 
     private fun sendEmailVerification(){
-        val user = auth!!.currentUser
+        val user = auth.currentUser
         user?.sendEmailVerification()?.addOnCompleteListener {
             if(it.isSuccessful){
                 contentToRealTime(binding.registerNameField.editText?.text.toString() ,
