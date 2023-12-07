@@ -16,3 +16,5 @@ class ViewPagerAdapter(list:ArrayList<Fragment> , fragment:FragmentManager , lif
         return fragmentList[position]
     }
 }
+
+
